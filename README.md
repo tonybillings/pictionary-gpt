@@ -33,12 +33,28 @@ as the module.
 
 ## Usage
 
+### Practice Mode
+
 Just draw and ChatGPT will keep guessing!  Note that it will guess at an interval 
-based on the `gptGuessIntervalSec` parameter (defaults to `10` seconds) and 
+based on the `gptGuessIntervalSec` parameter (defaults to `5` seconds) and 
 depending on whether you set the detail level to high or low, the token cost 
 will either be around 800 or 100 (respectively) for each guess.  To change the 
 detail level, set the `gptGuessAbility` parameter to `openai.ImageURLDetailHigh` 
 or `openai.ImageURLDetailLow` (which is the default and seems to work well enough). 
+
+### Game Mode
+
+Ready to put your paint skills to the test? Choose a Difficulty level and 
+ChatGPT will challenge you to draw an object that must be recognized by, well, 
+another ChatGPT. Did I mention there's a time limit and your brush uses ink 
+tanks that must be refilled?  
+
+| Difficulty |                         Correct Color                         |                                                       Correct Object                                                       |                                                                               Correct Color<br/>& Object                                                                                | 
+|------------|:-------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|  
+| **Easy**   | <img src="img/bronze_star.png" alt="bronze_star" width="50"/> | <img src="img/bronze_star.png" alt="bronze_star" width="50"/><img src="img/bronze_star.png" alt="bronze_star" width="50"/> | <img src="img/bronze_star.png" alt="bronze_star" width="50"/><img src="img/bronze_star.png" alt="bronze_star" width="50"/><img src="img/bronze_star.png" alt="bronze_star" width="50"/> |  
+| **Normal** | <img src="img/silver_star.png" alt="silver_star" width="50"/> | <img src="img/silver_star.png" alt="silver_star" width="50"/><img src="img/silver_star.png" alt="silver_star" width="50"/> | <img src="img/silver_star.png" alt="silver_star" width="50"/><img src="img/silver_star.png" alt="silver_star" width="50"/><img src="img/silver_star.png" alt="silver_star" width="50"/> |
+| **Hard**   |   <img src="img/gold_star.png" alt="gold_star" width="50"/>   |     <img src="img/gold_star.png" alt="gold_star" width="50"/><img src="img/gold_star.png" alt="gold_star" width="50"/>     |       <img src="img/gold_star.png" alt="gold_star" width="50"/><img src="img/gold_star.png" alt="gold_star" width="50"/><img src="img/gold_star.png" alt="gold_star" width="50"/>       |
+
 
 ## Screenshots
 
@@ -47,3 +63,19 @@ or `openai.ImageURLDetailLow` (which is the default and seems to work well enoug
 ![circuit](img/circuit.png)  
 
 ![map](img/map.png)  
+
+![purple_leaf](img/purple_leaf.png)  
+
+![dragonfly](img/dragonfly.png)  
+
+![treehouse](img/treehouse.png)  
+
+![book](img/book.png)  
+
+![notebook](img/notebook.png)  
+
+![bicycle](img/bicycle.png)  
+
+![ship](img/ship.png)  
+
+![unicorn](img/unicorn.png)  

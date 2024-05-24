@@ -1,0 +1,10 @@
+# Blender 4.1.1 MTL File: 'star.blend'
+# www.blender.org
+
+newmtl StarMaterial
+Ns 10.000000
+Ka 0.300000 0.300000 0.300000
+Kd 0.800000 0.800000 0.800000
+Ks 0.900000 0.900000 0.800000
+
+map_Kd metal.png

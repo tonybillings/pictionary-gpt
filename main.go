@@ -2,11 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"github.com/tonybillings/gfx"
 	"os"
 	"os/signal"
-	"strings"
 	"syscall"
 )
 
@@ -39,33 +37,17 @@ func main() {
 
 	imgDir := prepareImageDirectory(tempDirectory)
 
-	view := NewPictionaryView()
-	win.AddObjects(view)
+	gameView := NewPictionaryView(win, false)
+	practiceView := NewPictionaryView(win, true)
+	win.AddObjects(gfx.NewTabGroup(newHomeView(), practiceView, gameView))
 
 	win.EnableQuitKey()
 	win.EnableFullscreenKey()
 
 	gfx.InitWindowAsync(win)
 
-	canvas := view.Child("Canvas").(*gfx.Canvas)
-	exportFunc := func() {
-		if canvas.Initialized() {
-			canvas.Export(imgDir)
-		}
-	}
-
-	guess1 := view.Child("GuessLabel1").(*gfx.Label)
-	guess2 := view.Child("GuessLabel2").(*gfx.Label)
-	guessFunc := func(gptGuess string) {
-		words := strings.Split(gptGuess, " ")
-		if len(words) == 4 {
-			guess1.SetText(fmt.Sprintf("%s %s", words[0], words[1]))
-			guess2.SetText(fmt.Sprintf("%s %s", words[2], words[3]))
-		} else {
-			guess1.SetText(gptGuess)
-			guess2.SetText("")
-		}
-	}
+	exportFunc := getExportFunc(gameView, imgDir)
+	guessFunc := getGuessFunc(gameView)
 	go guessRoutine(ctx, imgDir, exportFunc, guessFunc)
 
 	go waitForInterruptSignal(ctx, cancelFunc)
